@@ -95,7 +95,7 @@ public class LinkedListImpl {
     }
 
     //reverse from kth Node
-    public Node reverse(int k) {
+    public Node reverse(Node head, int k) {
         Node prev = null;
         Node curr = head;
         Node next;
@@ -108,10 +108,9 @@ public class LinkedListImpl {
             count++;
         }
         if (curr != null) {
-            curr.next = reverse(k);
+            head.next = reverse(curr, k);
         }
-        head = prev;
-        return head;
+        return prev;
     }
     public void findMiddle() {
         Node current = head;
